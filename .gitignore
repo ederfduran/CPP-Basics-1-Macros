@@ -16,6 +16,8 @@
 *.dylib
 *.dll
 
+#vs files
+*.vs
 # Fortran module files
 *.mod
 *.smod

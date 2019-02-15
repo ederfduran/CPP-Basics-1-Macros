@@ -31,15 +31,7 @@ namespace cpp_class1 {
 	bool isBetween(float, float,float);
 	float getNearest(float,float,float);
 	float clamp(float,float,float);
-	// TEST MACROS
-	float getMinMacro(float, float);
-	float getMaxMacro(float, float);
-	int getModuleMacro(int, int);
-	bool isOddMacro(int);
-	bool isEvenMacro(int);
-	bool isBetweenMacro(float, float, float);
-	float getNearestMacro(float, float, float);
-	float clampMacro(float, float, float);
+	
 }
 
 

@@ -1,3 +1,4 @@
+#include <cassert>
 #include "FunMath.h"
 #include "MacroMath.h"
 
@@ -21,11 +22,13 @@ float cpp_class1::getPow2(float value) {
 	return std::pow(value,2);
 }
 float cpp_class1::getSqrt(float value) {
+	assert(value>0);
 	return std::sqrt(value);
 }
 unsigned int cpp_class1::getFactorial(unsigned int value) {
-	if (value == 0)
+	if (value == 0) {
 		return 1;
+	}
 	return value* cpp_class1::getFactorial(value-1);
 }
 
@@ -34,11 +37,13 @@ unsigned int cpp_class1::getFactorial(unsigned int value) {
 
 float cpp_class1::getMin(float a, float b)
 {
+	assert(a!=b);
 	return (a)>(b)?(b):(a);
 }
 
 float cpp_class1::getMax(float a, float b)
 {
+	assert(a != b);
 	return (a)>(b)?(a):(b);
 }
 
@@ -64,54 +69,13 @@ bool cpp_class1::isBetween(float a, float b, float c)
 
 float cpp_class1::getNearest(float a, float b, float c)
 {
+	assert(a!=b);
 	return std::abs((a)-(c))< std::abs((b)-(c)) ? a : b;
 }
 
 float cpp_class1::clamp(float a, float b, float c)
 {
 	return cpp_class1::isBetween(a, b, c) ? c : cpp_class1::getNearest(a, b, c);
-}
-
-//test macros
-
-float cpp_class1::getMinMacro(float a, float b)
-{
-	return MIN(a,b);
-}
-
-float cpp_class1::getMaxMacro(float a, float b)
-{
-	return MAX(a,b);
-}
-
-int cpp_class1::getModuleMacro(int a, int b)
-{
-	return MODULE(a,b);
-}
-
-bool cpp_class1::isOddMacro(int a)
-{
-	return ISODD(a);
-}
-
-bool cpp_class1::isEvenMacro(int a)
-{
-	return ISEVEN(a);
-}
-
-bool cpp_class1::isBetweenMacro(float a, float b, float c)
-{
-	return ISBETWEEN(a,b,c);
-}
-
-float cpp_class1::getNearestMacro(float a, float b, float c)
-{
-	return NEARESTNUMBER(a,b,c);
-}
-
-float cpp_class1::clampMacro(float a, float b, float c)
-{
-	return CLAMP(a,b,c);
 }
 
 

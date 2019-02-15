@@ -4,10 +4,10 @@
 
 namespace cpp_class1_macrotest {
 
-	float testAbsoluteValueMacro(float);
-	float testPowValueMacro(float);
-	float testSqrtValueMacro(float);
-	int testfactValueMacro(int);
+	void testAbsoluteValueMacro();
+	void testPowValueMacro();
+	void testSqrtValueMacro();
+	void testfactValueMacro();
 }
 
 

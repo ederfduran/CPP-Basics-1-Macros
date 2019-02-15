@@ -1,25 +1,26 @@
 #ifndef TESTFUNMATH_H
 #define TESTFUNMATH_H
+#define EPSILON 0.001
 
 namespace cpp_class1_funtest {
-	float testGetPI();
-	float testGetHalfPI();
-	float testGetQuarterPI();
-	float testGetDoublePI();
-	float testGetAbsoluteValue(float);
-	float testGetPow2(float);
-	float testGetSqrt(float);
-	unsigned long int testGetFactorial(unsigned int);
+	void testGetPI();
+	void testGetHalfPI();
+	void testGetQuarterPI();
+	void testGetDoublePI();
+	void testGetAbsoluteValue();
+	void testGetPow2();
+	void testGetSqrt();
+	void testGetFactorial();
 
 	// EXERCISE 4
-	float testGetMin(float, float);
-	float testGetMax(float, float);
-	int testGetModule(int, int);
-	bool testIsOdd(int);
-	bool testIsEven(int);
-	bool testIsBetween(float, float, float);
-	float testGetNearest(float, float, float);
-	float testClamp(float, float, float);
+	void testGetMin();
+	void testGetMax();
+	void testGetModule();
+	void testIsOdd();
+	void testIsEven();
+	void testIsBetween();
+	void testGetNearest();
+	void testClamp();
 }
 
 #endif 

@@ -1,88 +1,102 @@
 #include <cassert>
+#include <iostream>
 #include "FunMath.h"
 #include "TestFunMath.h"
 
-
-float cpp_class1_funtest::testGetPI() {
+void cpp_class1_funtest::testGetPI() {
 	const float piValue = cpp_class1::getPI();
-	assert(piValue); 
-	return piValue;
+	assert(std::abs(piValue - 3.14159265358979323846)< EPSILON );
 }
-float cpp_class1_funtest::testGetHalfPI() {
+void cpp_class1_funtest::testGetHalfPI() {
 	const float halfPi = cpp_class1::getHalfPI();
-	assert(halfPi);
-	return halfPi;
+	assert(std::abs(halfPi - 3.14159265358979323846/2)< EPSILON);
 }
-float cpp_class1_funtest::testGetQuarterPI() {
+void cpp_class1_funtest::testGetQuarterPI() {
 	const float quarterPi = cpp_class1::getQuarterPI();
-	assert(quarterPi);
-	return quarterPi;
+	assert(std::abs(quarterPi - 3.14159265358979323846/4)< EPSILON);
 }
-float cpp_class1_funtest::testGetDoublePI() {
+void cpp_class1_funtest::testGetDoublePI() {
 	const float doublePi= cpp_class1::getDoublePI();
-	assert(doublePi);
-	return doublePi;
+	assert( std::abs(doublePi - (3.14159265358979323846 * 2))< EPSILON);
 }
 
-float cpp_class1_funtest::testGetAbsoluteValue(float value) {
-	const float absValue = cpp_class1::getAbsoluteValue(value);
-	assert(absValue>0);
-	return absValue;
+void cpp_class1_funtest::testGetAbsoluteValue() {
+	const float mockData = -314.23f;
+	const float absValue = cpp_class1::getAbsoluteValue(mockData);
+	assert(absValue == 314.23f);
 }
-float cpp_class1_funtest::testGetPow2(float value) {
-	return cpp_class1::getPow2(value);
+void cpp_class1_funtest::testGetPow2() {
+	const float mockData = -3;
+	const float powValue = cpp_class1::getPow2(mockData);
+	assert(powValue == 9);
 }
-float cpp_class1_funtest::testGetSqrt(float value) {
-	assert(value>=0);
-	return cpp_class1::getSqrt(value);
+void cpp_class1_funtest::testGetSqrt() {
+	const float mockData = 25;
+	const float sqrtValue = cpp_class1::getSqrt(mockData);
+	assert(sqrtValue == 5);
+
 }
-unsigned long int cpp_class1_funtest::testGetFactorial(unsigned int value) {
-	assert(value >= 0);
-	return cpp_class1::getFactorial(value);
+void cpp_class1_funtest::testGetFactorial() {
+	const int mockData = 5;
+	const long long int factValue = cpp_class1::getFactorial(mockData);
+	assert(factValue == 120);
 }
 
 //EXERCISE 4
-float cpp_class1_funtest::testGetMin(float a, float b)
+void cpp_class1_funtest::testGetMin()
 {
-	assert(a != b);
-	return cpp_class1::getMin(a,b);
+	const float mockA = 123.231f, mockB = 23452.f;
+	const float min = cpp_class1::getMin(mockA,mockB);
+	assert(min==mockA);
 }
 
-float cpp_class1_funtest::testGetMax(float a, float b)
+void cpp_class1_funtest::testGetMax()
 {
-	assert(a != b);
-	return cpp_class1::getMax(a ,b);
+	const float mockA = 123.231f, mockB = 23452.f;
+	const float max = cpp_class1::getMax(mockA, mockB);
+	assert(max == mockB);
 }
 
-int cpp_class1_funtest::testGetModule(int a, int b)
+void cpp_class1_funtest::testGetModule()
 {
-	return cpp_class1::getModule(a,b);
+	const int mockA = 77, mockB = 10;
+	const int mod = cpp_class1::getModule(mockA, mockB);
+	assert(mod==7);
 }
 
-bool cpp_class1_funtest::testIsOdd(int a)
+void cpp_class1_funtest::testIsOdd()
 {
-	return cpp_class1::isOdd(a);
+	const int mockData = 111;
+	const int odd = cpp_class1::isOdd(mockData);
+	assert(odd);
 }
 
-bool cpp_class1_funtest::testIsEven(int a)
+void cpp_class1_funtest::testIsEven()
 {
-	return cpp_class1::isEven(a);
+	const int mockData = 100;
+	const int even = cpp_class1::isEven(mockData);
+	assert(even);
 }
 
-bool cpp_class1_funtest::testIsBetween(float a, float b, float c)
+void cpp_class1_funtest::testIsBetween()
 {
-	return cpp_class1::isBetween(a,b,c);
+	const float mockA = 10.f, mockB = 11.f,mockC=10.5f;
+	const bool isIn = cpp_class1::isBetween(mockA, mockB,mockC);
+	assert(isIn);
 }
 
-float cpp_class1_funtest::testGetNearest(float a, float b, float c)
+void cpp_class1_funtest::testGetNearest()
 {
-	return cpp_class1::getNearest(a,b,c);
+	const float mockA = 10.f, mockB = 11.f, mockC = 10.6f;
+	const float isNearest = cpp_class1::getNearest(mockA, mockB, mockC);
+	assert(isNearest==mockB);
 }
 
-float cpp_class1_funtest::testClamp(float a, float b, float c)
+void cpp_class1_funtest::testClamp()
 {
-	return cpp_class1::clamp(a,b,c);
+	const float mockA = 101.f, mockB = 111.f, mockC = 103.6f;
+	const float clampVar = cpp_class1::clamp(mockA, mockB, mockC);
+	assert(clampVar==mockC);
 }
 
-//TEST MACRO
 
